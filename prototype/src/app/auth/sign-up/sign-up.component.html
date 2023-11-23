@@ -1,0 +1,20 @@
+<div>
+    <h3>WELCOME TO SIGN_UP PAGE</h3>
+</div>
+
+
+<div>
+    <form [formGroup]="signupDetails" (ngSubmit)="validate()" >
+        <div>
+            <label for="username"  >USERNAME</label> <input required type="text" class="form-control" formControlName="username"> <br> <br>
+            <label for="gender">GENDER</label>
+            <select class="form-control" class="form-control" formControlName="gender">
+                <option>MALE</option>
+                <option>FEMALE</option>
+                <option>OTHER</option>
+            </select> <br> <br>
+            <label for="password" >PASSWORD</label> <input required type="text" class="form-control" formControlName="password"><br> <br>
+            <button>SIGN_UP</button>
+        </div>
+    </form>
+</div>
