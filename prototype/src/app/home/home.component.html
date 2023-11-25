@@ -2,42 +2,55 @@
     <h3>USER DETAILS</h3>
 </div>
 
-<form [formGroup]="userDetails" >
-    <label for="name">NAME</label> <input type="text" formControlName="name" class="form-control"> <br> <br>
+<form [formGroup]="userDetails">
+    <label for="name">NAME</label> <input type="text" formControlName="name" class="form-control"> 
+    <span>
+        <div *ngIf="vname &&vname.invalid && vname.touched">Name is required</div>
+    </span><br> <br>
     <label for="gender">GENDER</label><select formControlName="gender" class="form-control">
         <option>MALE</option>
         <option>FEMALE</option>
         <option>OTHER</option>
-    </select> <br> <br>
-    <label for="dob">DOB</label> <input type="date" max="2005-01-01" min="1925-01-01"  formControlName="dob" class="form-control" ><br> <br>
-    <label for="mobileNumber">MOBILE NUMBER</label> <input type="tel" formControlName="mobileNumber" class="form-control"> <br> <br>
-    <label for="eMail">E_MAIL</label> <input type="email" formControlName="eMail" class="form-control"> <br> <br>
-    <button type="button" (click)="addItem()">SUBMIT</button>
-    <button type="button"  (click)="reset()">RESET</button>
+    </select> <span>
+        <div *ngIf="vgender && vgender.touched && vgender.invalid">Gender is Required</div>
+    </span> <br> <br>
+    <label for="dob">DOB</label> <input type="date" max="2005-01-01" min="1925-01-01" formControlName="dob"
+        class="form-control"> <span>
+        <div *ngIf="vdob &&vdob.invalid && vdob.touched">DOB is Required</div>
+    </span><br> <br>
+    <label for="mobileNumber">MOBILE NUMBER</label> <input type="tel" formControlName="mobileNumber"
+        class="form-control"> <span>
+        <div *ngIf="vmobileNumber &&vmobileNumber.invalid && vmobileNumber.touched">Enter a Valid MobileNumber</div>
+    </span> <br> <br>
+    <label for="eMail">E_MAIL</label> <input type="email" formControlName="eMail" class="form-control"> <span>
+        <div *ngIf="veMail &&veMail.invalid && veMail.touched">Enter a Valid Email Address</div>
+    </span><br> <br>
+    <button type="button" [disabled]="userDetails.invalid" (click)="addItem()">SUBMIT</button>
+    <button type="button" (click)="reset()">RESET</button>
 </form>
 
 <hr>
 <div>
     <table>
         <thead>
-            <tr >
-              
+            <tr>
+
                 <th>NAME</th>
                 <th>GENDER</th>
                 <th>DOB</th>
                 <th>MOBILE NUMBER</th>
                 <th>E_MAIL</th>
-                <th>  </th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor=" let item of dataList">
-                    <td><span> {{item.name}} </span></td>
-                    <td><span> {{item.gender}} </span></td>
-                    <td><span> {{item.dob}} </span></td>
-                    <td><span> {{item.mobileNumber}} </span></td>
-                    <td><span> {{item.eMail}} </span></td>
-                    <td><button type="button"(click)="removeItem()">Delete</button></td>
+                <td><span> {{item.name}} </span></td>
+                <td><span> {{item.gender}} </span></td>
+                <td><span> {{item.dob}} </span></td>
+                <td><span> {{item.mobileNumber}} </span></td>
+                <td><span> {{item.eMail}} </span></td>
+                <td><button type="button" (click)="removeItem()">Delete</button></td>
             </tr>
         </tbody>
     </table>

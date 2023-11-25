@@ -4,19 +4,25 @@
 
 
 <div>
-    <form [formGroup]="signupDetails" (ngSubmit)="validate()">
+    <form [formGroup]="signupDetails" (ngSubmit)="saveData()">
         <div>
             <label for="username">USERNAME</label> <input required type="text" class="form-control"
-                formControlName="username"> <br> <br>
+                formControlName="username">  <span>
+                    <div *ngIf="vusername &&vusername.invalid && vusername.touched">Enter Valid Username</div>
+                </span><br> <br>
             <label for="gender">GENDER</label>
             <select class="form-control" class="form-control" formControlName="gender">
                 <option>MALE</option>
                 <option>FEMALE</option>
                 <option>OTHER</option>
-            </select> <br> <br>
+            </select>  <span>
+                <div *ngIf="vgender &&vgender.invalid && vgender.touched">Gender is required</div>
+            </span><br> <br>
             <label for="password">PASSWORD</label> <input required type="text" class="form-control"
-                formControlName="password"><br> <br>
-            <button>SIGN_UP</button>
+                formControlName="password"> <span>
+                    <div *ngIf="vpwd &&vpwd.invalid && vpwd.touched">Enter a Valid Password</div>
+                </span><br> <br>
+            <button type="button">SIGN_UP</button>
         </div>
     </form>
 </div>
