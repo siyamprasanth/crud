@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl,FormControlName, FormBuilder } from '@angular/forms';
+import { FormGroup,FormControl, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,22 +8,24 @@ import { FormGroup,FormControl,FormControlName, FormBuilder } from '@angular/for
 })
 export class SignUpComponent {
   signupDetails!: FormGroup;
+
+
 constructor(private formBuilder:FormBuilder){
+  
   this.signupDetails = this.formBuilder.group({
-    username:new FormControl(),
-    gender:new FormControl(),
-    password:new FormControl(),
+  username:['',Validators.pattern( "^[A-Za-z][A-Za-z0-9_]{7,29}$")],
+  gender:[Validators.required],
+  password:['', Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/)],
   })
 }
 
-validate(){
- console.log(this.signupDetails.value);
- 
- 
- }
 
+validate(){
+  
+  
+    
 }
 
-  
+}  
 
 

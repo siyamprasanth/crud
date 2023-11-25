@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +12,7 @@ export class SignInComponent {
 
   constructor(private formBuilder:FormBuilder){
     this.signinDetails=this.formBuilder.group({
-      username:new FormControl(),
+      username:new FormControl(''),
       password:new FormControl(),
     })
   }
