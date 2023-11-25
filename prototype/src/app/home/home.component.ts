@@ -17,8 +17,8 @@ constructor(private fb: FormBuilder){
     name:['',Validators.required],
     gender :['',Validators.required],
     dob:['',Validators.required],
-    mobileNumber:['',Validators.required],
-    eMail: ['',Validators.required],
+    mobileNumber:['',Validators.required,Validators.minLength(10),Validators.maxLength(10)],
+    eMail: ['',Validators.required,Validators.email],
 
   })
 }

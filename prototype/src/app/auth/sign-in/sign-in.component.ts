@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 })
 export class SignInComponent {
 
-  signinDetails!:FormGroup
+  signinDetails:FormGroup;
 
   constructor(private formBuilder:FormBuilder){
     this.signinDetails=this.formBuilder.group({
@@ -22,7 +22,7 @@ export class SignInComponent {
 
 
   validate(){
-console.log(this.signinDetails.value);
+
 
 
   }
