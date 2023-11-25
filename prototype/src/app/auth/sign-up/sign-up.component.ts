@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl, FormBuilder,Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -29,7 +29,7 @@ get vpwd(){
 }
 
 saveData(){
-  console.log(this.signupDetails.value);
+  this.signupDetails.valid
   
   
     

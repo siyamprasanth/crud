@@ -50,12 +50,10 @@ reset(){
   this.userDetails.reset()
 }
 
-removeItem(){
-//   this.dataList.forEach(value, index => {
-//     if (value == element)
-//     this.dataList.splice(index, 1)
-//   });
+removeItem(element :any){
+  this.dataList.splice('', 1);
 }
+
 ngOnInit(): void {
   
 }
