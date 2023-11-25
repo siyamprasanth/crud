@@ -7,7 +7,7 @@ import { FormGroup,FormControl, FormBuilder,Validators } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  signupDetails!: FormGroup;
+  signupDetails: FormGroup;
 
 
 constructor(private formBuilder:FormBuilder){
@@ -18,9 +18,18 @@ constructor(private formBuilder:FormBuilder){
   password:['', Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/)],
   })
 }
+get vusername(){
+  return this.signupDetails.get('username');
+}
+get vgender(){
+  return this.signupDetails.get('gender');
+}
+get vpwd(){
+  return this.signupDetails.get('password');
+}
 
-
-validate(){
+saveData(){
+  console.log(this.signupDetails.value);
   
   
     
