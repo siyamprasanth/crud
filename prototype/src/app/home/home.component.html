@@ -2,8 +2,8 @@
     <h3>USER DETAILS</h3>
 </div>
 
-<form [formGroup]="userDetails">
-    <label for="name">NAME</label> <input type="text" formControlName="name" class="form-control"> 
+<form [formGroup]="userDetails" >
+    <label for="name">NAME</label> <input type="text" formControlName="name" class="form-control">
     <span>
         <div *ngIf="vname &&vname.invalid && vname.touched">Name is required</div>
     </span><br> <br>
@@ -25,7 +25,7 @@
     <label for="eMail">E_MAIL</label> <input type="email" formControlName="eMail" class="form-control"> <span>
         <div *ngIf="veMail &&veMail.invalid && veMail.touched">Enter a Valid Email Address</div>
     </span><br> <br>
-    <button type="button" [disabled]="userDetails.invalid" (click)="addItem()">SUBMIT</button>
+    <button type="button" (click)="addItem()">SUBMIT</button>
     <button type="button" (click)="reset()">RESET</button>
 </form>
 

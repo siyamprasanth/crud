@@ -17,7 +17,7 @@ constructor(formBuilder: FormBuilder){
     name:['',Validators.required],
     gender :['',Validators.required],
     dob:['',Validators.required],
-    mobileNumber:['',Validators.required,Validators.pattern(/^([+]\d{2}[ ])?\d{10}$/)],
+    mobileNumber:['',Validators.required,Validators.minLength(10),Validators.pattern(/^([+]\d{2}[ ])?\d{10}$/)],
     eMail: ['',Validators.required,Validators.email],
 
   })
@@ -51,7 +51,7 @@ reset(){
 }
 
 removeItem(element :any){
-  this.dataList.splice('');
+  this.dataList.splice();
 }
 
 ngOnInit(): void {

@@ -8,6 +8,7 @@ import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 })
 export class SignInComponent {
 
+
   signinDetails:FormGroup;
 
   constructor(private formBuilder:FormBuilder){
@@ -16,14 +17,12 @@ export class SignInComponent {
       password:new FormControl(),
     })
   }
-
-
-
-
-
   validate(){
-
-
-
+    
   }
+
+
+
+
+ 
 }

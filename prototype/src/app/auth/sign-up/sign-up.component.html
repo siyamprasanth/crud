@@ -8,7 +8,7 @@
         <div>
             <label for="username">USERNAME</label> <input required type="text" class="form-control"
                 formControlName="username">  <span>
-                    <div *ngIf="vusername &&vusername.invalid && vusername.touched">Enter Valid Username</div>
+                    <div *ngIf="vusername && vusername.invalid && vusername.touched">Enter Valid Username</div>
                 </span><br> <br>
             <label for="gender">GENDER</label>
             <select class="form-control" class="form-control" formControlName="gender">
@@ -16,13 +16,14 @@
                 <option>FEMALE</option>
                 <option>OTHER</option>
             </select>  <span>
-                <div *ngIf="vgender &&vgender.invalid && vgender.touched">Gender is required</div>
+                <div *ngIf="vgender && vgender.invalid && vgender.touched">Gender is required</div>
             </span><br> <br>
             <label for="password">PASSWORD</label> <input required type="text" class="form-control"
                 formControlName="password"> <span>
                     <div *ngIf="vpwd &&vpwd.invalid && vpwd.touched">Enter a Valid Password</div>
                 </span><br> <br>
-            <button type="button">SIGN_UP</button>
-        </div>
+            <button [routerLink]="" type="button">SIGN_UP</button>
+        </div><br>
+        <div>Already have an Account<a [routerLink]="" > SIGN_IN HERE</a></div>
     </form>
 </div>
