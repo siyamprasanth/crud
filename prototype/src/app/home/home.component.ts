@@ -51,7 +51,7 @@ reset(){
 }
 
 removeItem(element :any){
-  this.dataList.splice('', 1);
+  this.dataList.splice('');
 }
 
 ngOnInit(): void {
