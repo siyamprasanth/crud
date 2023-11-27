@@ -13,8 +13,8 @@ export class SignInComponent {
 
   constructor(private formBuilder:FormBuilder){
     this.signinDetails=this.formBuilder.group({
-      username:new FormControl(''),
-      password:new FormControl(),
+      username: ['',Validators.required],
+      password:['',Validators.required],
     })
   }
   validate(){

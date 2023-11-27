@@ -29,7 +29,10 @@ get vpwd(){
 }
 
 saveData(){
-  this.signupDetails.valid
+  if(this.signupDetails.valid){
+  
+  }
+
   
   
     

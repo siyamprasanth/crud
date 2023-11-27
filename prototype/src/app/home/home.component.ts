@@ -17,8 +17,8 @@ constructor(formBuilder: FormBuilder){
     name:['',Validators.required],
     gender :['',Validators.required],
     dob:['',Validators.required],
-    mobileNumber:['',Validators.required,Validators.minLength(10),Validators.pattern(/^([+]\d{2}[ ])?\d{10}$/)],
-    eMail: ['',Validators.required,Validators.email],
+    mobileNumber:['',Validators.pattern("^\\d{10}$")],
+    eMail: ['',Validators.email],
 
   })
 }
@@ -40,7 +40,9 @@ get veMail(){
 
 
 public addItem(): void{
-  this.userDetails.valid;
+ if( this.userDetails.invalid){
+  return
+ }
   this.dataList.push(this.userDetails.value);
   this.userDetails.reset();
  
@@ -51,7 +53,10 @@ reset(){
 }
 
 removeItem(element :any){
-  this.dataList.splice();
+  this.dataList.splice('',1);
+}
+onEdit(){
+  this.userDetails.value.isEdit = true;
 }
 
 ngOnInit(): void {
