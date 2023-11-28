@@ -56,7 +56,9 @@ removeItem(_element :any){
   this.dataList.splice('',1);
 }
 
-
+onEdit(item: any){
+ item.isEdit = true
+}
 ngOnInit(): void {
   
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { RouterLink, Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class SignUpComponent {
   
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private routes : Router) {
 
     this.signupDetails = this.formBuilder.group({
       username: ['', Validators.pattern("^[A-Za-z][A-Za-z0-9_]{7,29}$")],
@@ -36,7 +38,8 @@ export class SignUpComponent {
       console.log( this.signupDetails.value);
       localStorage.setItem('signupDetails',(JSON.stringify(this.signupDetails.value)));
       this.signupDetails.reset();
-      alert('Your Account Has Been Created')
+      alert('Your Account Has Been Created');
+    this.routes.navigate(['/','sign-in'])
     }
     
   }
