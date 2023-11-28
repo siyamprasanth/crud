@@ -52,12 +52,10 @@ reset(){
   this.userDetails.reset()
 }
 
-removeItem(element :any){
+removeItem(_element :any){
   this.dataList.splice('',1);
 }
-onEdit(){
-  this.userDetails.value.isEdit = true;
-}
+
 
 ngOnInit(): void {
   

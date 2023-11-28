@@ -2,7 +2,7 @@
     <h3>USER DETAILS</h3>
 </div>
 
-<form [formGroup]="userDetails" >
+<form [formGroup]="userDetails">
     <label for="name">NAME</label> <input type="text" formControlName="name" class="form-control">
     <span>
         <div *ngIf="vname &&vname.invalid && vname.touched">Name is required</div>
@@ -18,7 +18,7 @@
         class="form-control"> <span>
         <div *ngIf="vdob &&vdob.invalid && vdob.touched">DOB is Required</div>
     </span><br> <br>
-    <label for="mobileNumber">MOBILE NUMBER</label> <input type="tel" formControlName="mobileNumber"
+    <label for="mobileNumber">MOBILE NUMBER</label> <input type="number" formControlName="mobileNumber"
         class="form-control"> <span>
         <div *ngIf="vmobileNumber &&vmobileNumber.invalid && vmobileNumber.touched">Enter a Valid MobileNumber</div>
     </span> <br> <br>
@@ -51,7 +51,7 @@
                 <td><span> {{item.mobileNumber}} </span></td>
                 <td><span> {{item.eMail}} </span></td>
                 <td><button type="button" (click)="removeItem(item)">Delete</button></td>
-                <td><button type="button" (click)="onEdit()">Edit</button></td>
+                <td><button type="button" >Edit</button></td>
             </tr>
         </tbody>
     </table>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
+import { FormBuilder,FormGroup,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,6 +10,7 @@ export class SignInComponent {
 
 
   signinDetails:FormGroup;
+  
 
   constructor(private formBuilder:FormBuilder){
     this.signinDetails=this.formBuilder.group({
@@ -17,12 +18,19 @@ export class SignInComponent {
       password:['',Validators.required],
     })
   }
-  validate(){
-    
+
+  get vusername() {
+    return this.signinDetails.get('username');
   }
-
-
-
-
- 
+  validate(){
+   
+  // const userDetails = JSON.parse(localStorage.getItem('signinDetails') || '');
+  // 
+   const ud = localStorage.getItem('signupDetails')
+   console.log(ud);
+   if (this.vusername == ud) {
+      true
+     
+   } else(false)
+} 
 }
